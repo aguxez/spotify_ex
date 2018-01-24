@@ -37,7 +37,7 @@ defmodule Responder do
         end
 
       def handle_response({ :ok, %HTTPoison.Response{ status_code: _code, body: body }}) do
-        response = body |> Poison.decode! |> build_response
+        response = body |> Poison.decode! |> build_response()
 
         { :ok, response }
       end
